@@ -21,6 +21,7 @@
   "homepage": "https://github.com/thedinosoar/keegabit#readme",
   "devDependencies": {
     "@types/node": "^24.2.1",
+    "terser": "^5.43.1",
     "typescript": "^5.9.2",
     "vite": "^7.1.1"
   }

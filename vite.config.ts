@@ -8,22 +8,22 @@ export default defineConfig({
   build: {
     // Output to dist folder in project root
     outDir: '../dist',
-    // Inline assets smaller than 4kb
+    // Inline small assets for speed (4kb threshold)
     assetsInlineLimit: 4096,
-    // Minimize CSS
+    // Keep CSS as separate file for caching benefits
     cssCodeSplit: false,
-    // Generate lightweight builds
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true
-      }
-    },
+    // Use fast minification
+    minify: 'esbuild',
+    // Optimize for speed
+    target: 'esnext',
     // Optimize chunks
     rollupOptions: {
       output: {
-        manualChunks: undefined
+        manualChunks: undefined,
+        // Optimize asset names for caching
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js'
       }
     }
   },
