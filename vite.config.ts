@@ -3,15 +3,12 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   // Set src as the root directory
   root: 'src',
-  
   // Optimize for production builds
   build: {
     // Output to dist folder in project root
     outDir: '../dist',
     // Inline small assets for speed (4kb threshold)
     assetsInlineLimit: 4096,
-    // Keep CSS as separate file for caching benefits
-    cssCodeSplit: false,
     // Use fast minification
     minify: 'esbuild',
     // Optimize for speed
