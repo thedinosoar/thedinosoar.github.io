@@ -1,0 +1,27 @@
+{
+  "name": "keegabit",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000k\u0000e\u0000e\u0000g\u0000a\u0000b\u0000i\u0000t\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedinosoar/keegabit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thedinosoar/keegabit/issues"
+  },
+  "homepage": "https://github.com/thedinosoar/keegabit#readme",
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.1"
+  }
+}
