@@ -2,6 +2,7 @@
   "name": "keegabit",
   "version": "1.0.0",
   "description": "A better alternative to linktree",
+  "type": "module",
   "main": "src/main.ts",
   "scripts": {
     "dev": "vite",
