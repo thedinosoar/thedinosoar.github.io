@@ -158,16 +158,55 @@ body {
 }
 
 /* Specific social platform colors on hover */
-.social-link:nth-child(1):hover { /* Twitter */
+/* Clean Discord link with animated rainbow border */
+.social-link:first-child {
+    position: relative;
+    border: 3px solid transparent;
+    background: 
+        rgba(255, 255, 255, 0.95) padding-box,
+        linear-gradient(90deg, #ff0000, #ff8000, #ffff00, #00ff00, #00ffff, #0080ff, #8000ff, #ff00ff, #ff0000) border-box;
+    background-size: 200% 100%;
+    box-shadow: 
+        0 0 20px rgba(255, 107, 107, 0.4),
+        0 0 30px rgba(78, 205, 196, 0.3),
+        0 0 40px rgba(69, 183, 209, 0.3),
+        0 8px 32px rgba(0, 0, 0, 0.15);
+    animation: rainbow-border-flow 3s linear infinite;
+    font-weight: 600;
+    font-size: 1.15rem;
+    border-color: #5865f2;
+}
+
+.social-link:first-child:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 
+        0 0 30px rgba(255, 107, 107, 0.6),
+        0 0 45px rgba(78, 205, 196, 0.5),
+        0 0 60px rgba(69, 183, 209, 0.4),
+        0 12px 40px rgba(0, 0, 0, 0.2);
+    animation: rainbow-border-flow 1.5s linear infinite;
+    border-color: #5865f2;
+}
+
+@keyframes rainbow-border-flow {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 200% 0%;
+    }
+}
+
+.social-link:nth-child(1):hover { /* Discord */
+    color: #5865f2;
+}
+
+.social-link:nth-child(2):hover { /* Twitter */
     color: #1da1f2;
 }
 
-.social-link:nth-child(2):hover { /* GitHub */
+.social-link:nth-child(3):hover { /* GitHub */
     color: #333;
-}
-
-.social-link:nth-child(3):hover { /* LinkedIn */
-    color: #0077b5;
 }
 
 .social-link:nth-child(4):hover { /* Instagram */
@@ -178,8 +217,8 @@ body {
     color: #ff0000;
 }
 
-.social-link:nth-child(6):hover { /* Email */
-    color: #ea4335;
+.social-link:nth-child(6):hover { /* TikTok */
+    color: #000000;
 }
 
 /* Footer */
@@ -235,8 +274,26 @@ body {
     }
 }
 
+/* Subtle Discord icon enhancement */
+.social-link:first-child .icon {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+    transition: all 0.3s ease;
+}
+
+.social-link:first-child:hover .icon {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+    transform: scale(1.15);
+}
+
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
+    .social-link:first-child,
+    .social-link:first-child::before,
+    .social-link:first-child::after,
+    .social-link:first-child .icon {
+        animation: none !important;
+    }
+    
     *,
     *::before,
     *::after {
